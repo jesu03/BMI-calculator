@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="ex1.css">
+</head>
+
+
+<body>
+    <div class="layout">
+    <h1 style="text-align: center;  padding: 10px; margin-bottom: 10px;    font-family: cursive "  >BMI healthy weight calculator</h1>
+    <h3 style="text-align: center; font-family: cursive ">Use this calculator to check your body mass index (BMI) and 
+        find out if you're a healthy weight.</h3>
+    <div class="container">
+        <div class="sub-container">
+    <form action="" name="form1">
+    Your Weight(kg):   <input type="text" name="weight" size="10"> <br> <br> 
+    Your Height(cm):   <input type="text" name="height" size="10"> <br> <br>
+    <label for="gender"> Select you gender</label>
+    <select name="gender">
+        
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      
+    </select> <br> <br>
+     <input type="button" value="Calculate" onclick="onshow()"><br> <br>
+
+     <div class="your"> 
+        your BMI:<input type="text" name="bmi" size="10"> <br> <br>
+     </div>
+        
+    <div class="alludas">
+        This Alludes: <input type="text" name="meaning"> <br> <br>
+    </div> 
+    <div class="reset">
+        <input type="reset" value="Clear" />
+  
+    </div>
+    
+      </form>
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <script language="JavaScript">
+    
+    function onshow(){
+        var weight = document.form1.weight.value;
+        var  height = document.form1.height.value;
+        if(weight > 0 && height > 0){
+            var final = weight/(height/100*height/100)
+            document.form1.bmi.value=final;
+            if(final <18.5){
+                document.form1.meaning.value = "you are too thin :)";
+            }
+            if(final >18.5 && final < 25){
+                document.form1.meaning.value = "you are healthy :)";
+            }
+            if(final > 25){
+                document.form1.meaning.value = "you are over weight :)";
+            }
+        }
+        
+            else{
+                alert("please fill everything correctly");
+            }
+        
+        
+    }    
+
+    </script>
+    
+
+</body>
+
+
+</html>
